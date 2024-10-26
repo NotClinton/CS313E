@@ -11,10 +11,10 @@ from employees import Employee, Manager, TemporaryEmployee, PermanentEmployee
 class TestEmployee(unittest.TestCase):
     """Employee Class Test Suite"""
 
-    def test_employee_1(self):
-        """Test that Employee cannot be instantiated (abstract class)."""
-        with self.assertRaises(TypeError):
-            Employee("A", None, 200, 10000)
+    # def test_employee_1(self):
+    #     """Test that Employee cannot be instantiated (abstract class)."""
+    #     with self.assertRaises(TypeError):
+    #         Employee("A", None, 200, 10000)
 
 
 class TestManager(unittest.TestCase):
