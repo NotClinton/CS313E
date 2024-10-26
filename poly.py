@@ -120,21 +120,29 @@ class LinkedList:
             return
 
         cur = self.head
+        prev = None
 
-        while cur.next is not None:
+        while cur is not None:
 
-            if cur.next.exp == exp:
+            if cur.exp == exp:
                 cur.coeff += coeff
-            elif cur.next.exp < exp:
-                nnode.next = cur.next
-                cur.next = nnode
                 return
+            elif cur.exp < exp:
+                nnode.next = cur
+
+                if prev is not None:
+                    prev.next = nnode
+
+                elif prev is None:
+                    self.head = nnode
+                return
+            prev = cur
             cur = cur.next
 
             if cur.next is None:
                 nnode.next = None
-                cur.next = nnode
-                return
+                prev.next = nnode
+
 
 
     # Add a polynomial p to the polynomial and return the resulting polynomial as a new linked list.
@@ -250,7 +258,6 @@ def main():
             cur = cur.next
     q = head
 
-    print(p.add(q))
 
 
 
