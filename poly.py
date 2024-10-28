@@ -139,9 +139,8 @@ class LinkedList:
             prev = cur
             cur = cur.next
 
-            if cur.next is None:
-                nnode.next = None
-                prev.next = nnode
+
+        prev.next = nnode
 
 
 
