@@ -302,8 +302,7 @@ class ImageGraph:
         queue.enqueue(self.vertices[start_index])
 
         while not queue.is_empty():
-            curkey = queue.dequeue()
-            curvertex = self.vertices[curkey]
+            curvertex = queue.dequeue()
             curvertex.visited = True
 
             if curvertex.color == self.vertices[start_index].color:
