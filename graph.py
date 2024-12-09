@@ -380,7 +380,7 @@ def create_graph(data):
     # split the data by new line
     data_ = data.split('\n')
     # get size of image and number of vertices
-    size = data_[0]
+    size = int(data_[0])
     numvertices = int(data_[1])
     numedges = int(data_[numvertices + 2])
     # create the ImageGraph
