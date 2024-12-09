@@ -188,11 +188,25 @@ class LinkedList:
     def __str__(self):
         """String representation"""
         l = []
+        # ls = []
         cur = self.head
 
         while cur is not None:
-            l.append(str((cur.coeff, cur.exp)))
-            cur = cur.next
+            if cur.coeff == 0:
+                continue
+            else:
+                l.append(str((cur.coeff, cur.exp)))
+                cur = cur.next
+
+        # for poly in l:
+        #     if ls is []:
+        #         ls.append(poly)
+        #     for i in range(ls):
+        #         if poly[0] > ls[i][0]:
+        #             ls.insert(i,poly)
+
+        #ls = [str(poly) for poly in ls]
+
 
         string = " + ".join(l)
         return string

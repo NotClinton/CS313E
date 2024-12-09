@@ -1,0 +1,29 @@
+# value1 = input()
+# value2 = input()
+# print(value1 + value2)
+
+import random
+def quick_sort(nums):
+    if len(nums) <= 1:
+        return nums
+
+    pivot = random.choice(nums)
+
+    left_list = []
+    middle_list = []
+    right_list = []
+    for num in nums:
+        if num < pivot:
+            left_list.append(num)
+        elif num > pivot:
+            right_list.append(num)
+        else:
+            middle_list.append(num)
+    return quick_sort(left_list) + middle_list + quick_sort(right_list)
+
+
+def g(n):
+    result = [random.randint(0, 100000) for _ in range(n)]
+    quick_sort(result) # Sort the list into ascending order
+    return result
+g(32000)
